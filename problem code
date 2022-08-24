@@ -1,0 +1,34 @@
+#include <iostream>
+#include<sstream>
+
+using namespace std;
+
+int main()
+{
+    string value;
+    getline(cin,value);
+    //cout<<value;
+    stringstream str(value);
+    int counter=0;
+
+    while(str>>value){
+            if(value[0]=='.' || value[0]=='!' || value[0]=='?' || value[0]==','){
+            for(int i=0;i<value.size();i++)
+            {
+                if(value[i]=='.' || value[i]=='!' || value[i]=='?' || value[i]==',')
+                continue;
+                else
+                {
+                    counter++;
+                    break;
+                }
+
+                }
+            }
+         else
+            counter++;
+    }
+
+    cout<<counter;
+
+}
